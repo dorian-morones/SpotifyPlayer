@@ -3,7 +3,7 @@ import { Route, Router } from 'react-router'
 import PropTypes from 'prop-types'
 import './App.css'
 
-import Index from './views/index'
+import Index from './views/home'
 import Player from './views/player'
 
 class App extends Component {

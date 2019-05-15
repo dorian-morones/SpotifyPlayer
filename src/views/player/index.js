@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { playTrack, checkSignIn } from '../../actions'
-
-import './player.css'
+import '../styles/style.css'
 
 class Player extends Component {
     constructor(props) {
