@@ -1,86 +1,123 @@
-@import url('https://fonts.googleapis.com/css?family=Anton|Montserrat');
-body{
- background: #fff;
- font-family: 'Montserrat', sans-serif;
+@import url("https://fonts.googleapis.com/css?family=Anton|Montserrat");
+body {
+  background: #fff;
 }
 
 /* HOME */
 .Index {
+  background-image: url("../assets/banner_2.jpg");
+  height: 300px;
+  background-size: cover;
+  background-position-x: 200px;
+  background-position-y: 800px;
+}
 
-  }
-  .Index__Title{
-    font-size: 40px;
-    font-family: 'Montserrat', sans-serif !important;
-    color: #000;
-  }
+.Index__Title {
+  font-size: 40px;
+  font-family: "Anton", sans-serif !important;
+  color: #000;
+  text-align: center;
+}
 
-  .Index__searchBox {
-    display: flex;
-  }
-  
-  .Index__SearchBox-input{
-      background-color: #fffc00 !important;
-      font-family: 'Montserrat', sans-serif !important;
-  }
+.Index__searchBox {
+  display: flex;
+}
 
-  input[type="text"]:not(.browser-default):focus:not([readonly]){
-    border-bottom: 2px solid #fffc00 !important;
-    box-shadow: none !important;
-  }
-  .Index__SearchBox-input i{
-    color: #000;
-  }
-  .SongItem {
-    display: flex;
-    width: 100%;
-    margin: 4% 2% 2% 2%;
-    transition: all .3s ease;
-    cursor: pointer;
-  }
-  
-  .SongItem > a {
-    display: flex;
-    color: #212121;
-  }
-  
-  .SongItem:hover {
-    background-color: gray;
-  }
-  
-  .SongItem-photo > img {
-    width: 100px;
-    height: auto;
-  }
-  
-  .SongItem-info {
-    margin-left: 1vw;
-  }
-  
-  .SongItem-info > h2 {
-    font-size: 1.4vw;
-    margin: 0;
-  }
-  
-  .SongItem-info > h3 {
-    font-size: 1.2vw;
-  }
+.Index__searchBox input{
+width: 100%;
+border: none;
+border-bottom: 2px solid #000 !important;
+background: none !important;
+}
+
+.Index__SearchBox_input{
+  font-family: "Montserrat", sans-serif !important;
+  width: 100%;
+}
+.Index__SearchBox_btn {
+  background-color: #000 !important;
+  border-radius: 0 !important;
+}
+.Index__SearchBox_btn i{
+  color: #fff;
+}
+
+.Index__SearchBox_btn i:focus{
+  color: #fffc00;
+}
+.Index__SearchBox_btn i:hover{
+  color: #fffc00;
+}
+
+.Index__searchBox input:focus{
+  border: none;
+  /* border-bottom: 2px solid #fffc00 !important; */
+  border-bottom: 2px solid #fff !important;
+
+}
+
+.Index__SearchBox_input i {
+  color: #000;
+}
+
+.Index .card{
+  background: rgba(255,255,255,0.5) !important;
+  border: none !important;
+}
+
+/* SongItem   */
+.Songs{
+  margin-top: 20px;
+}
+.SongItem .card.mb-3:hover {
+  background: #fffc00;
+}
+
+.SongItem .card-body h2{
+  font-family: "Montserrat", sans-serif !important;
+font-size: 12px;
+}
+.SongItem .card-body h3{
+  font-family: "Montserrat", sans-serif !important;
+font-size: 14px;
+}
+.SongItem .card-body h3 i{
+  margin-right: 5px;
+}
+.SongItem .card-body h2 i{
+  margin-right: 5px;
+}
+
+.SongItem .card-body .btn-play{
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 14px;
+  color: #000;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.SongItem .card-body .btn-play:hover{
+  color: #fffc00;
+  background-color: #000;
+  text-decoration: none;
+}
 
 /* PLAYER */
 .Player {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-  
-  .Player-box {
-    display: flex;
-  }
-  
-  .Player-left > img{
-    width: 200px;
-  }
-  
-  .Player-right {
-    margin-left: 2%;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.Player-box {
+  display: flex;
+}
+
+.Player-left > img {
+  width: 200px;
+}
+
+.Player-right {
+  margin-left: 2%;
+}

@@ -25,24 +25,21 @@ class Index extends Component {
     const { songs } = this.props;
     if (songs.length > 0) {
       return (
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-12">
-              {songs.map((currrentValue, index) => {
-                return (
-                  <SongItem
-                    key={index}
-                    songId={currrentValue.id}
-                    tokenPath={this.getTokenPath()}
-                    albumPhoto={currrentValue.album.images[0].url}
-                    albumName={currrentValue.album.name}
-                    songName={currrentValue.name}
-                    artistName={currrentValue.artists[0].name}
-                  />
-                );
-              })}
-            </div>
-          </div>
+        <div className="row Songs">
+            {songs.map((currrentValue, index) => {
+              return (
+                <SongItem
+                  key={index}
+                  songId={currrentValue.id}
+                  tokenPath={this.getTokenPath()}
+                  albumPhoto={currrentValue.album.images[0].url}
+                  albumName={currrentValue.album.name}
+                  songName={currrentValue.name}
+                  release_date={currrentValue._album.release_date}
+                  artistName={currrentValue.artists[0].name}
+                />
+              );
+            })}
         </div>
       );
     }
@@ -50,29 +47,29 @@ class Index extends Component {
   render() {
     const { song } = this.state;
     const { songs } = this.props;
-
+    console.log(this.props)
     if (songs.type === "IS_FETCHING") {
       return <Spinner name="double-bounce" />;
     }
     return (
-      <div className="container-fluid Index">
-        <div className="row">
-          <div className="col-12">
+      <div className="container-fluid">
+        <div className="row justify-content-start Index">
+          <div className="col-6 align-self-center">
             <h2 className="Index__Title">Search your Song</h2>
             <div class="card">
               <div class="card-body">
                 <div className="Index__searchBox">
                   <input
                     type="text"
-                    className="Index__searchBox-input"
-                    placeholder="Cancion"
+                    className="Index__searchBox_input a"
+                    placeholder="Song"
                     onChange={e => {
                       this.setState({ song: e.target.value });
                     }}
                     value={song}
                   />
                   <a
-                    className="btn Index__SearchBox-input"
+                    className="btn Index__SearchBox_btn"
                     onClick={e => this.props.search(song)}
                   >
                     <i className="fa fa-search" />
@@ -81,10 +78,8 @@ class Index extends Component {
               </div>
             </div>
           </div>
-          <div className="col-12">
-          {this.getResultsCard()}
-          </div>
         </div>
+        {this.getResultsCard()}
       </div>
     );
   }
