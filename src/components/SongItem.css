@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css?family=Anton|Montserrat");
+
+.Songs{
+  margin-top: 20px;
+}
+.SongItem .card.mb-3 {
+  border: solid 2px #000;
+}
+
+.SongItem .card.mb-3:hover {
+  border: solid 2px #fffc00;
+}
+
+.SongItem .card-body h2{
+  font-family: "Montserrat", sans-serif !important;
+font-size: 12px;
+}
+.SongItem .card-body h3{
+  font-family: "Montserrat", sans-serif !important;
+font-size: 14px;
+}
+.SongItem .card-body h3 i{
+  margin-right: 5px;
+}
+.SongItem .card-body h2 i{
+  margin-right: 5px;
+}
+
+.SongItem .card-body .btn-play{
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 14px;
+  color: #000;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.SongItem .card-body .btn-play:hover{
+  color: #fffc00;
+  background-color: #000;
+  text-decoration: none;
+}

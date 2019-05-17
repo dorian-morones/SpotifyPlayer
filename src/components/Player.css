@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css?family=Anton|Montserrat");
+
+.Player {
+}
+.Player img{
+  width: 100%;
+}
+.Player .card.mb-3 {
+  border: solid 2px #000;
+}
+
+.Player .data{
+  background-color: #fffc00;
+  padding: 10px 0;
+}
+.Player .data p{
+  float: left;
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 16px;
+  margin: 0 4px;
+  width: 100px;
+  text-align: center;
+}
+
+.Player .data p i{
+  margin-right: 5px;
+}
+.Player .data audio{
+  margin-top: 10px;
+width: 100%;
+background-color: #000;
+}

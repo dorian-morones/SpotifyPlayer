@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css?family=Anton|Montserrat");
+
+.Home__searchBox {
+  display: flex;
+}
+
+.Home__searchBox input{
+width: 100%;
+border: none;
+border-bottom: 2px solid #000 !important;
+background: none !important;
+}
+
+.Home__SearchBox_input{
+  font-family: "Montserrat", sans-serif !important;
+  width: 100%;
+}
+.Home__SearchBox_btn {
+  background-color: #000 !important;
+  border-radius: 0 !important;
+}
+.Home__SearchBox_btn i{
+  color: #fff;
+}
+
+.Home__SearchBox_btn i:focus{
+  color: #fffc00;
+}
+.Home__SearchBox_btn i:hover{
+  color: #fffc00;
+}
+
+.Home__searchBox input:focus{
+  border: none;
+  /* border-bottom: 2px solid #fffc00 !important; */
+  border-bottom: 2px solid #fffc00 !important;
+
+}
+
+.Home__SearchBox_input i {
+  color: #000;
+}
+
+.Home .card{
+  background: rgba(255,255,255,0.5) !important;
+  border: none !important;
+}

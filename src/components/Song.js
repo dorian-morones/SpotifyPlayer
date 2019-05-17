@@ -8,7 +8,7 @@ function Song(props, tokenPath) {
   return (
     <div className="row Songs">
       {songs.map((currrentValue, index) => {
-            console.log(currrentValue)
+        // console.log("Song", currrentValue)
         return (
           <SongItem
             key={index}

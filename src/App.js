@@ -4,8 +4,9 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./App.css";
 import Layout from "./components/Layout";
-import Index from "./views/home";
-import Player from "./views/player";
+//import Player from "./views/player";
+import Home from "./pages/Home.js";
+import Player from "./components/Player.js";
 
 class App extends Component {
   render() {
@@ -13,7 +14,7 @@ class App extends Component {
       <BrowserRouter>
         <Layout>
           <Switch>
-            <Route exact path="/" component={Index} />
+            <Route exact path="/" component={Home} />
             <Route path="/player/:songId" component={Player} />
           </Switch>
         </Layout>
