@@ -1,60 +1,70 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import { playTrack, checkSignIn } from '../../actions'
-import '../styles/style.css'
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { playTrack, checkSignIn } from "../../actions";
+import "../styles/style.css";
 
 class Player extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            songId: this.props.match.params.songId
-        }
-    }
-    componentWillMount() {
-        this.props.checkSignIn();
-        this.props.playTrack(this.state.songId);
-    }
-    render() {
-        const { player } = this.props;
+  constructor(props) {
+    super(props);
+    this.state = {
+      songId: this.props.match.params.songId
+    };
+  }
+  componentWillMount() {
+    this.props.checkSignIn();
+    this.props.playTrack(this.state.songId);
+  }
+  render() {
+    const { player } = this.props;
 
-        if (player.type === "COMPLETE_SONG") {
-            console.log(player.payload);
-            return (
-                <div className="Player">
-                    <div className="card">
-                        <div className="card-content Player-box">
-                            <div className="Player-left">
-                                <img src={player.payload.album.images[0].url} />
-                            </div>
-                            <div className="Player-right">
-                                <audio controls>
-                                    <source src={player.payload.preview_url} />
-                                </audio>
-                                <h4>{player.payload.name}</h4>
-                                <h6>{player.payload.artists[0].name}</h6>
-                            </div>
-                        </div>
-                    </div>
+    if (player.type === "COMPLETE_SONG") {
+      return (
+        <div className="Player">
+          <div className="container-fluid">
+            <div className="row justify-content-center">
+              <div className="col-5">
+                <img src={player.payload.album.images[0].url} />
+                <div className="data">
+                  <p>
+                    <i className="fa fa-music" /> {player.payload.name}
+                  </p>
+                  <p>
+                    <i className="fa fa-microphone" />
+                    {player.payload.artists[0].name}
+                  </p>
+                  <audio controls>
+                    <source src={player.payload.preview_url} />
+                  </audio>
                 </div>
-            );
-        }
-        return <div></div>;
+              </div>
+            </div>
+          </div>
+        </div>
+      );
     }
+    return <div />;
+  }
 }
 
 function mapStateToProps(state) {
-    return {
-        routes: state.routes,
-        player: state.player
-    }
+  return {
+    routes: state.routes,
+    player: state.player
+  };
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({
-        checkSignIn,
-        playTrack
-    }, dispatch)
+  return bindActionCreators(
+    {
+      checkSignIn,
+      playTrack
+    },
+    dispatch
+  );
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Player);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Player);

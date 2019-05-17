@@ -4,7 +4,7 @@ body {
 }
 
 /* HOME */
-.Index {
+.Navbar {
   background-image: url("../assets/banner_2.jpg");
   height: 300px;
   background-size: cover;
@@ -12,7 +12,7 @@ body {
   background-position-y: 800px;
 }
 
-.Index__Title {
+.Navbar__Title {
   font-size: 40px;
   font-family: "Anton", sans-serif !important;
   color: #000;
@@ -52,7 +52,7 @@ background: none !important;
 .Index__searchBox input:focus{
   border: none;
   /* border-bottom: 2px solid #fffc00 !important; */
-  border-bottom: 2px solid #fff !important;
+  border-bottom: 2px solid #fffc00 !important;
 
 }
 
@@ -69,8 +69,12 @@ background: none !important;
 .Songs{
   margin-top: 20px;
 }
+.SongItem .card.mb-3 {
+  border: solid 2px #000;
+}
+
 .SongItem .card.mb-3:hover {
-  background: #fffc00;
+  border: solid 2px #fffc00;
 }
 
 .SongItem .card-body h2{
@@ -104,20 +108,32 @@ font-size: 14px;
 
 /* PLAYER */
 .Player {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+}
+.Player img{
+  width: 100%;
+}
+.Player .card.mb-3 {
+  border: solid 2px #000;
 }
 
-.Player-box {
-  display: flex;
+.Player .data{
+  background-color: #fffc00;
+  padding: 10px 0;
+}
+.Player .data p{
+  float: left;
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 16px;
+  margin: 0 4px;
+  width: 100px;
+  text-align: center;
 }
 
-.Player-left > img {
-  width: 200px;
+.Player .data p i{
+  margin-right: 5px;
 }
-
-.Player-right {
-  margin-left: 2%;
+.Player .data audio{
+  margin-top: 10px;
+width: 100%;
+background-color: #000;
 }

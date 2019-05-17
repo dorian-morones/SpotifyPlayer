@@ -1,20 +1,23 @@
-import React, { Component } from 'react'
-import { Route, Router } from 'react-router'
-import PropTypes from 'prop-types'
-import './App.css'
-
-import Index from './views/home'
-import Player from './views/player'
+import React, { Component } from "react";
+import { Router } from "react-router";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import PropTypes from "prop-types";
+import "./App.css";
+import Layout from "./components/Layout";
+import Index from "./views/home";
+import Player from "./views/player";
 
 class App extends Component {
   render() {
     return (
-      <Router history={this.props.history}>
-        <div>
-          <Route exact path="/" component={Index} />
-          <Route path="/player/:songId" component={Player} />
-        </div>
-      </Router>
+      <BrowserRouter>
+        <Layout>
+          <Switch>
+            <Route exact path="/" component={Index} />
+            <Route path="/player/:songId" component={Player} />
+          </Switch>
+        </Layout>
+      </BrowserRouter>
     );
   }
 }
