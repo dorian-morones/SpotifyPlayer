@@ -13,7 +13,7 @@ function Song(props, tokenPath) {
           <SongItem
             key={index}
             songId={currrentValue.id}
-            tokenPath={tokenPath}
+            tokenPath={props.tokenPath}
             albumPhoto={currrentValue.album.images[0].url}
             albumName={currrentValue.album.name}
             songName={currrentValue.name}
