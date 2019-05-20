@@ -5,7 +5,7 @@ import "./SongItem.css";
 
 class SongItem extends Component {
   render() {
-    console.log("SongItem")
+    console.log("SongItem", this.props)
     const { songName, tokenPath, albumPhoto, artistName, songId, release_date } = this.props;
     return (
       <div className="col-4">

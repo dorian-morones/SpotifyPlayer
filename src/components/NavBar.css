@@ -1,9 +1,9 @@
 .Navbar {
   background-image: url("../Assets/banner_2.jpg");
-  height: 300px;
+  height: 200px;
   background-size: cover;
-  background-position-x: 200px;
-  background-position-y: 800px;
+  /* background-position-x: 200px;
+  background-position-y: 800px; */
 }
 
 .Navbar__Title {
