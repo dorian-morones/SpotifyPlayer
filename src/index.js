@@ -10,16 +10,13 @@ import { routerMiddleware } from 'react-router-redux'
 import thunk from 'redux-thunk'
 
 import App from './App'
-import reducers from './reducers'
+import rootReducer from './reducers'
 import 'bootstrap/dist/css/bootstrap.css';
+import store from "./store/index";
 
 const history = createHistory()
 const middleware = [routerMiddleware(history),thunk];
 
-const store = createStore(
-  reducers,
-  applyMiddleware(...middleware)
-)
 
 ReactDOM.render(
   <Provider store={ store }>
