@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import SongItem from "../components/SongItem";
 
-function Song(props, tokenPath) {
+function Song(props) {
   let songs = props.data.songs;
   return (
     <div className="row Songs">
@@ -19,6 +19,7 @@ function Song(props, tokenPath) {
             songName={currrentValue.name}
             release_date={currrentValue._album.release_date}
             artistName={currrentValue.artists[0].name}
+            openModal={props.openModal}
           />
         );
       })}

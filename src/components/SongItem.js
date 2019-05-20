@@ -28,9 +28,10 @@ class SongItem extends Component {
                       Release Date: {release_date}
                     </small>
                   </p>
-                  <Link to={"player/" + songId + tokenPath} className="btn-play">
-                    Play <i className="fa fa-play" />
-                  </Link>
+                  {/* <Link to={"player/" + songId + tokenPath} className="btn-play">
+                    Play <i className="fa fa-play"/>
+                  </Link> */}
+                  <button onClick={this.props.openModal} type="button" className="btn btn-dark btn-play">Play <i className="fa fa-play"/></button>
                 </div>
               </div>
             </div>

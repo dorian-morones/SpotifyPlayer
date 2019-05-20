@@ -5,13 +5,17 @@ import SongItem from "../components/SongItem";
 import Spinner from "react-spinkit";
 import { checkSignIn, search } from "../actions";
 import Song from "../components/Song"
+import Player from "../components/Player.js";
 import "./Home.css";
 
 class Home extends Component {
     constructor() {
         super();
+        this.handleOpenModal = this.handleOpenModal.bind(this);
+
         this.state = {
-            song: ""
+            song: "",
+            openModal: false,
         };
     }
     componentWillMount() {
@@ -20,6 +24,10 @@ class Home extends Component {
     getTokenPath() {
         let path = window.location.href;
         return path.substring(path.indexOf("#"), path.length);
+    }
+    handleOpenModal(){
+        this.setState({openModal: true})
+        console.log("handleOpenModal", this.state)
     }
 
     render() {
@@ -56,7 +64,10 @@ class Home extends Component {
                     </div>
                 </div>
                 {
-                    songs.length > 0 ? <Song data={this.props} tokenPath={this.getTokenPath()} /> : null
+                    songs.length > 0 ? <Song data={this.props} tokenPath={this.getTokenPath()} openModal={this.handleOpenModal}/> : null
+                }
+                {
+                    this.state.openModal === true ? <Player /> : null
                 }
             </div>
         );
@@ -66,7 +77,8 @@ class Home extends Component {
 function mapStateToProps(state) {
     return {
         routes: state.routes,
-        songs: state.player
+        songs: state.player,
+        openModal: state.openModal
     };
 }
 
