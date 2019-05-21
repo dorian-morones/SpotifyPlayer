@@ -1,19 +1,20 @@
-export default function player(state = [], action) {
+const initialState = {
+    songs: [],
+    search: '',
+    player: [],
+    err: null, 
+}
+
+export default function player(state = initialState, action) {
     switch (action.type) {
         case "COMPLETE_FETCH":
-            return [
-                action.payload[0],
-                action.payload[1],
-                action.payload[2],
-                action.payload[3],
-                action.payload[4],
-            ];
+            return {...state, songs: action.payload}
         case "ERROR_FETCH":
-            return action
+            return {...state, err}
         case "COMPLETE_SONG":
-            return action
+            return {...state, player: action.payload}
         case "IS_FETCHING":
-            return action
+            return {...state}
         default:
             return state;
     }

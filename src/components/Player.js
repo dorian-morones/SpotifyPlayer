@@ -12,7 +12,7 @@ class Player extends Component {
         };
     }
     componentWillMount() {
-        this.props.playTrack(this.state.song);
+        this.props.playTrack(this.props.song);
         console.log(this.props)
     }
     render() {

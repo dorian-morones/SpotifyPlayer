@@ -27,7 +27,7 @@ export const checkSignIn = () => {
 
 const startFetch = () => { return { type: "IS_FETCHING", isFetching: true } };
 const errorFetch = (err) => { return { type: 'ERROR_FETCH', isFetching: false, err } };
-const completeFetch = (data) => { return { type: 'COMPLETE_FETCH', isFetching: false, payload: data } };
+const completeFetch = (data) => { return { type: 'COMPLETE_FETCH', isFetching: false, payload: songs } };
 
 export const search = (trackName) => {
   return (dispatch, getState) => {
@@ -44,18 +44,18 @@ export const search = (trackName) => {
 }
 
 
-const completeSong = (data) => { return { type: "COMPLETE_SONG", success: true, payload: data } };
+const completeSong = (data) => { return { type: "COMPLETE_SONG", success: true, isFetching: false, payload: data } };
 
 export const playTrack = (songId) => {
-  return (dispatch, getState) => {
+  console.log(songId)
+  return ( dispatch, getState ) => {
     dispatch(startFetch());
-    axios.get('https://api.spotify.com/v1/tracks/'.concat(songId), { headers: { "Authorization": 'Bearer ' + client.token } })
-      .then(response => {
-        dispatch(completeSong(response.data));
-        console.log("response", response)
-      })
-      .catch(err => {
+    axios.get('https://api.spotify.com/v1/tracks/'.concat( songId ),{ headers: {"Authorization" : 'Bearer ' + client.token }} )
+    .then( response => {
+      console.log(response.data)
+        // dispatch(completeSong(response.data));
+    })
+    .catch( err => {
         console.log(err);
-      });
-  }
-}
+    });
+  }}
