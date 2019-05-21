@@ -8,7 +8,7 @@ function Song(props) {
   return (
     <div className="row Songs">
       {songs.map((currrentValue, index) => {
-        // console.log("Song", currrentValue)
+        //console.log("Song", currrentValue)
         return (
           <SongItem
             key={index}

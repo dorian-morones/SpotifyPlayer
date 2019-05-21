@@ -16,6 +16,8 @@ class Home extends Component {
         this.state = {
             song: "",
             openModal: false,
+            songId: "",
+            Token: ""
         };
     }
     componentWillMount() {
@@ -25,13 +27,16 @@ class Home extends Component {
         let path = window.location.href;
         return path.substring(path.indexOf("#"), path.length);
     }
-    handleOpenModal(){
-        this.setState({openModal: true})
-        console.log("handleOpenModal", this.state)
+    handleOpenModal(e, data, tokenPath) {
+        e.preventDefault();
+        this.setState({ openModal: true })
+        this.setState({ songId: data.songId })
+        this.setState({ Token: tokenPath })
+        console.log(" state=", this.state)
     }
 
     render() {
-        const { song } = this.state;
+        const { song, songId, Token } = this.state;
         const { songs } = this.props;
         if (songs.type === "IS_FETCHING") {
             return <Spinner name="double-bounce" />;
@@ -64,10 +69,10 @@ class Home extends Component {
                     </div>
                 </div>
                 {
-                    songs.length > 0 ? <Song data={this.props} tokenPath={this.getTokenPath()} openModal={this.handleOpenModal}/> : null
+                    songs.length > 0 ? <Song data={this.props} tokenPath={this.getTokenPath()} openModal={this.handleOpenModal} /> : null
                 }
                 {
-                    this.state.openModal === true ? <Player /> : null
+                    this.state.openModal === true ? <Player song={songId} token={Token} /> : null
                 }
             </div>
         );

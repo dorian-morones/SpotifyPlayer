@@ -5,8 +5,8 @@ import "./SongItem.css";
 
 class SongItem extends Component {
   render() {
-    console.log("SongItem", this.props)
     const { songName, tokenPath, albumPhoto, artistName, songId, release_date } = this.props;
+
     return (
       <div className="col-4">
         <div className="SongItem">
@@ -31,7 +31,7 @@ class SongItem extends Component {
                   {/* <Link to={"player/" + songId + tokenPath} className="btn-play">
                     Play <i className="fa fa-play"/>
                   </Link> */}
-                  <button onClick={this.props.openModal} type="button" className="btn btn-dark btn-play">Play <i className="fa fa-play"/></button>
+                  <button onClick={e => this.props.openModal(e, this.props, tokenPath)} type="button" className="btn btn-dark btn-play">Play <i className="fa fa-play" /></button>
                 </div>
               </div>
             </div>
